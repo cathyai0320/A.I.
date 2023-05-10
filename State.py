@@ -1,8 +1,8 @@
 '''
-@author: Catherine Pequino
+@author: Devangini Patel
 '''
 
-from GraphData import graph
+from NavigationData import *
 
 class State:
     '''
@@ -18,23 +18,23 @@ class State:
     
     def getInitialState(self):
         """
-        This method returns me.
+        This method returns source place
         """
-        initialState = "Adam"
+        initialState = "Bus Stop"
         return initialState
 
 
     def successorFunction(self):
         """
-        This is the successor function. It finds all the persons connected to the
-        current person
+        This is the successor function. It finds all the places connected to the
+        current place
         """
-        return graph[self.name]
+        return connections[self.name]
         
         
     def checkGoalState(self):
         """
-        This method checks whether the person is Jill.
+        This method checks whether the current place is AI Lab
         """ 
-        #check if the person's name is Jill
-        return self.name == "Jill"
+        #check if the place is AI Lab
+        return self.name == "AI Lab"
